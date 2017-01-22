@@ -9,7 +9,7 @@ rm -f nexus-latest-unix.tar.gz
 echo "Configuring..."
 
 FOLDER_NAME=`ls -td -- nexus*/ | head -n 1 | cut -d'/' -f1`
-VERSION=`printf '%s\n' "${FOLDER_NAME//nexus-/}"
+VERSION=`printf '%s\n' "${FOLDER_NAME//nexus-/}"`
 
 sed -i -e "s/application-host=.*/application-host=${OPENSHIFT_DIY_IP}/" nexus-${VERSION}/etc/nexus-default.properties
 sed -i -e "s/application-port=.*/application-port=${OPENSHIFT_DIY_PORT}/" nexus-${VERSION}/etc/nexus-default.properties
