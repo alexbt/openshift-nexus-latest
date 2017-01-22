@@ -6,6 +6,8 @@ This repository was forked this project from **https://github.com/juliogonzalez/
 
 **It was modified so that it always (dynamically) uses the version.**
 
+The installation uses the following link to download the latest version: http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+
 #How to Deploy
 Using `Openshift 2` command line tool (`rhc`), type the following command to deploy:
 
