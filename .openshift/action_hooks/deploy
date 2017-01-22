@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-echo "Downloading Nexus ${VERSION}..."
+echo "Downloading Latest Nexus"
 wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz -O ${OPENSHIFT_DATA_DIR}nexus-latest-unix.tar.gz
 cd ${OPENSHIFT_DATA_DIR}
 tar -xzf nexus-latest-unix.tar.gz
