@@ -1,8 +1,10 @@
-With this project, you can easily deploy the latest Nexus Repository to your OpenShift Online account.
+With this project, you can easily deploy the **latest** Nexus Repository to your OpenShift Online account.
 
 #Forked
 This repository was forked this project from **https://github.com/juliogonzalez/sonatype-nexus-openshift**, which was configured (at the time) for *v3
-.1.0-04*. It was modified to dynamically fetch & deploy the **latest** version.
+.1.0-04*.
+
+**It was modified so that it always (dynamically) uses the version.**
 
 #How to Deploy
 Using `Openshift 2` command line tool (`rhc`), type the following command to deploy:
