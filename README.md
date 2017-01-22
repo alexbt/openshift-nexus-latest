@@ -15,5 +15,5 @@ The process will take some time (accessing the url will display a *503*), you ma
 the logs:
 
     ssh 588fef487628e10cd10000f0@$APPNAME-$USER.rhcloud.com
-    tail -f $OPENSHIFT_DATA_DIR/log/nexus.log
+    tail -f $OPENSHIFT_DATA_DIR/data/log/nexus.log
   
