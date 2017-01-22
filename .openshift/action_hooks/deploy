@@ -1,16 +1,16 @@
 #!/bin/bash
 set -x
-VERSION="3.1.0-04"
-if [ -d ${OPENSHIFT_DATA_DIR}nexus-${VERSION} ]; then
-  echo "Nexus ${VERSION} was already deployed!"
-  exit 0
-else
+
   echo "Downloading Nexus ${VERSION}..."
-  wget http://download.sonatype.com/nexus/3/nexus-${VERSION}-unix.tar.gz -O ${OPENSHIFT_DATA_DIR}nexus-${VERSION}-unix.tar.gz
+  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz -O ${OPENSHIFT_DATA_DIR}nexus-latest-unix.tar.gz
   cd ${OPENSHIFT_DATA_DIR}
-  tar -xzf nexus-${VERSION}-unix.tar.gz
-  rm -f nexus-${VERSION}-unix.tar.gz
+  tar -xzf nexus-latest-unix.tar.gz
+  rm -f nexus-latest-unix.tar.gz
   echo "Configuring..."
+
+  FOLDER_NAME=`ls -td -- nexus*/ | head -n 1 | cut -d'/' -f1`
+  VERSION=`printf '%s\n' "${FOLDER_NAME//nexus-/}"
+
   sed -i -e "s/application-host=.*/application-host=${OPENSHIFT_DIY_IP}/" nexus-${VERSION}/etc/nexus-default.properties
   sed -i -e "s/application-port=.*/application-port=${OPENSHIFT_DIY_PORT}/" nexus-${VERSION}/etc/nexus-default.properties
   sed -i -e "s/-Xms.*M/-Xms${OPENSHIFT_GEAR_MEMORY_MB}M/" nexus-${VERSION}/bin/nexus.vmoptions
@@ -32,4 +32,3 @@ else
   fi
   echo "Linking new Nexus ${VERSION}..."
   ln -s ${OPENSHIFT_DATA_DIR}nexus-${VERSION} ${OPENSHIFT_DATA_DIR}nexus
-fi
