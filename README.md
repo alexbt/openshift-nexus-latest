@@ -11,8 +11,13 @@ Using `Openshift 2` command line tool (`rhc`), type the following command to dep
 
     rhc app-create nexus diy-0.1 --from-code https://github.com/alexbt/openshift-nexus-latest.git
 
-The process will take some time (accessing the url will display a *503*), you may connect to the server and tail 
-the logs:
+The process will take some time (the deployment takes somewhere between 15 and 30 minutes!). If you try accessing the application too quickly, it may display the following message:
+
+> Service Temporarily Unavailable
+> 
+> The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again > later.
+If that is the case, you may connect to the server and tail 
+the logs to see what is going on
 
     ssh 588fef487628e10cd10000f0@$APPNAME-$USER.rhcloud.com
     tail -f $OPENSHIFT_DATA_DIR/data/log/nexus.log
