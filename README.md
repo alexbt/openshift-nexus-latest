@@ -8,6 +8,7 @@ This repository was forked this project from **https://github.com/juliogonzalez/
 
 #How to Deploy
 Using `Openshift 2` command line tool (`rhc`), type the following command to deploy:
+
     rhc app-create nexus diy-0.1 --from-code https://github.com/alexbt/openshift-nexus-latest.git
 
 The process will take some time (accessing the url will display a *503*), you may connect to the server and tail 
