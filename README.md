@@ -4,7 +4,7 @@ With this project, you can easily deploy the **latest** Nexus Repository to your
 This repository was forked this project from **https://github.com/juliogonzalez/sonatype-nexus-openshift**, which was configured (at the time) for *v3
 .1.0-04*.
 
-**It was modified so that it always (dynamically) uses the version.**
+**It was then modified so that it always (dynamically) uses the latest version.**
 
 The installation uses the following link to download the latest version: http://download.sonatype.com/nexus/3/latest-unix.tar.gz
 
