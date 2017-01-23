@@ -13,7 +13,7 @@ Using `Openshift 2` command line tool (`rhc`), type the following command to dep
 
     rhc app-create nexus diy-0.1 --from-code https://github.com/alexbt/openshift-nexus-latest.git
 
-The process will take some time (the deployment takes somewhere between 15 and 30 minutes!). If you try accessing the application too quickly, it may display the following message:
+The process will take some time (the deployment takes somewhere around 5-10 minutes!). If you try accessing the application too quickly, it may display the following message:
 
 > Service Temporarily Unavailable
 > 
